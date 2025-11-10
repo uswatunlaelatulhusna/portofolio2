@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — [Nama Anda]</title>
+  <meta name="description" content="Portofolio [Nama Anda] — web developer / designer / dsb." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">[Nama Anda]</a>
+      <button id="navToggle" class="nav-toggle" aria-label="Buka navigasi">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="mainNav" class="nav">
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#projects">Proyek</a></li>
+          <li><a href="#skills">Skill</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Halo, saya <span class="accent">[Nama Anda]</span></h1>
+          <p class="lead">Saya seorang web developer/ designer yang membuat produk digital yang berguna dan menarik.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">Lihat Proyek</a>
+            <button class="btn outline" id="downloadBtn">Download CV</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img class="profile" alt="Foto profil" src="https://via.placeholder.com/260x260.png?text=Foto" />
+          <ul class="socials">
+            <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>Tentang Saya</h2>
+        <p>Saya fokus pada pembuatan antarmuka yang responsif dan pengalaman pengguna yang baik. Saya terbiasa menggunakan HTML, CSS, JavaScript, dan framework modern.</p>
+        <div class="about-grid">
+          <div>
+            <h3>Pengalaman</h3>
+            <p>3+ tahun dalam pengembangan front-end, kolaborasi dengan designer & tim produk.</p>
+          </div>
+          <div>
+            <h3>Pendekatan</h3>
+            <p>Mengutamakan aksesibilitas, performa, dan kode yang mudah dipelihara.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Proyek</h2>
+        <p>Beberapa contoh pekerjaan yang saya buat.</p>
+        <div class="projects-grid">
+          <article class="project-card" data-title="Website Toko">
+            <img alt="Project 1" src="https://via.placeholder.com/600x360.png?text=Project+1" />
+            <div class="project-body">
+              <h3>Website Toko</h3>
+              <p>Sistem e-commerce sederhana dengan fokus UX dan performa.</p>
+              <div class="project-actions">
+                <button class="btn small" data-modal="modal1">Detail</button>
+                <a class="btn small outline" href="#" target="_blank" rel="noopener">Live</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-title="Dashboard Admin">
+            <img alt="Project 2" src="https://via.placeholder.com/600x360.png?text=Project+2" />
+            <div class="project-body">
+              <h3>Dashboard Admin</h3>
+              <p>Dashboard analitik dengan visualisasi data interaktif.</p>
+              <div class="project-actions">
+                <button class="btn small" data-modal="modal2">Detail</button>
+                <a class="btn small outline" href="#" target="_blank" rel="noopener">Repo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2>Keahlian</h2>
+        <ul class="skills-list">
+          <li>HTML & CSS (Sass)</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React / Vue (dasar)</li>
+          <li>Performance & Accessibility</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Kontak</h2>
+        <p>Ingin bekerja sama atau ngobrol proyek? Kirim pesan lewat form ini.</p>
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <input type="text" id="name" name="name" placeholder="Nama" required />
+            <input type="email" id="email" name="email" placeholder="Email" required />
+          </div>
+          <textarea id="message" name="message" rows="6" placeholder="Tulis pesan..." required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Kirim</button>
+            <button type="button" class="btn outline" id="copyEmail">Salin email</button>
+          </div>
+          <p class="muted">Atau kirim langsung ke: <strong id="emailText">nama@domain.com</strong></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> [Nama Anda]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal templates -->
+  <div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div id="modalContent" class="modal" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close" aria-label="Tutup">&times;</button>
+      <div id="modalInner"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
